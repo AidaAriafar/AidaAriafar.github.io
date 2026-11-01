@@ -1,14 +1,35 @@
-# updated website
+# Aida Aryafar Academic Website
 
-This repo is built on a fork of **Jekyll Now** from [this repository](https://github.com/barryclark/jekyll-now). **Jekyll** is a static site generator that's perfect for GitHub hosted blogs ([Jekyll Repository](https://github.com/jekyll/jekyll))
+This repository contains the source for Aida Aryafar's academic personal website.
 
-The website design is just a modification of [Jon Barron's website](https://jonbarron.info/) and is converted for my own use, re-purposing my old markdown posts. **Feel free to use template for your own purposes**, but please respect copyright for all the images/content in my `images`, `pdfs`, `_posts` folders. 
+Live site:
 
+https://aidaariafar.github.io/
 
+## Structure
 
-## issues
-* In general, jekyll will try to build a full page for every post. I skip that by forcing `permalink: /`. This creates multiple entries in sitemap.xml for index.html but is otherwise fine. 
-* If you want multiple paragraphs, consider using `excerpt_separator: <!--more-->` in `_config.yml`, for my own use I didn't need this. 
-* My own posts have lots of extra stuff left over from my old jekyll design ("author", long descriptions, etc.), feel free to ignore them
-* I use thumbnails, so I can upload arbitrary sized images but then only display small ones. The `_make_thumbnails.sh` script generates them and the html template looks in `tn/` for all images. 
-* I have three categories of post with slightly differerent formatting, so changing sizing requires edits in multiple paces. 
+- `index.html` contains the static homepage.
+- `assets/css/style.css` contains site styles.
+- `assets/js/main.js` contains minimal progressive enhancement.
+- `images/profile/` is where the profile image should go. The expected future path is `images/profile/profile.webp`.
+- `images/projects/` is for selected research project images.
+- `images/gallery/` is for personal or gallery images.
+- `photos.html` contains the photography page and loads future images from `images/gallery/`.
+
+## Preview Locally
+
+From the repository root, run:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+## Deployment
+
+This is a plain static GitHub Pages site. The `.nojekyll` file tells GitHub Pages not to run Jekyll. Deployment is handled by GitHub Pages from the repository's configured publishing branch.
